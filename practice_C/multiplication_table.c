@@ -26,5 +26,11 @@ int main() {
     whileLoop(number);
     forLoop(number);
 
+    int sum = 0;
+    for (int i=1; i<=100; i=i+1) {
+        sum = sum + i;
+    }
+    printf("Sum of odd numbers from 1 to 99 = %d\n", sum);
+
     return 0;
 }
