@@ -1,11 +1,19 @@
 #include <stdio.h>
 #include <math.h>
 
-void pathagorous (double* a, double* b, double* c) {
+// void pythagoras (double* a, double* b, double* c) {
+//     *a = pow(*a, 2);
+//     *b = pow(*b, 2);
+
+//     *c = sqrt(*a + *b);
+// }
+
+int* pathagorous (double* a, double* b, double* c) {
     *a = pow(*a, 2);
     *b = pow(*b, 2);
-
     *c = sqrt(*a + *b);
+
+    return c;
 }
 
 int main() {
@@ -34,13 +42,15 @@ int main() {
     // example for functions with pointers as arguments
     double a = 2;
     double b = 3; 
+    // double c;
     double c;
 
-    pathagorous(&a, &b, &c);
-
+    double* result = pathagorous(&a, &b, &c);
+    
     printf("a = %.2lf\n", a);
     printf("b = %.2lf\n", b);
-    printf("c = %.2lf\n", c);
+    // printf("c = %.2lf\n", c);
+    printf("result = %.2lf\n", *result);
 
     return 0;
 }
