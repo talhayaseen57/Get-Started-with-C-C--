@@ -1,4 +1,12 @@
 #include <stdio.h>
+#include <math.h>
+
+void pathagorous (double* a, double* b, double* c) {
+    *a = pow(*a, 2);
+    *b = pow(*b, 2);
+
+    *c = sqrt(*a + *b);
+}
 
 int main() {
     double salary;
@@ -22,6 +30,17 @@ int main() {
     }
 
     printf("largest value in arr[] = %d\n", largest);
+
+    // example for functions with pointers as arguments
+    double a = 2;
+    double b = 3; 
+    double c;
+
+    pathagorous(&a, &b, &c);
+
+    printf("a = %.2lf\n", a);
+    printf("b = %.2lf\n", b);
+    printf("c = %.2lf\n", c);
 
     return 0;
 }
