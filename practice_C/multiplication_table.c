@@ -1,21 +1,9 @@
 #include <stdio.h>
 
-void whileLoop(int number) {
-    int count = 10;
-
-    printf("Multiplication table of %d using while loop.\n", number);
-    while (count >= 1) {
-        printf("%d x %2d = %3d\n", number, count, number*count);
-        count--;
-    }
-}
-
-void forLoop(int number) {
-    printf("Multiplication table of %d using foor loop.\n", number);
-    for (int count = 1; count <= 10; count++) {
-        printf("%d x %2d = %3d\n", number, count, number*count);
-    }
-}
+// Function Prototypes for  whileLoop and forLoop functions.
+// because whileLoop and forLoop are defined after main() function in the code.
+void whileLoop(int number);
+void forLoop(int number);
 
 int main() {
     int number;
@@ -33,4 +21,21 @@ int main() {
     printf("Sum of odd numbers from 1 to 99 = %d\n", sum);
 
     return 0;
+}
+
+void whileLoop(int number) {
+    int count = 10;
+
+    printf("Multiplication table of %d using while loop.\n", number);
+    while (count >= 1) {
+        printf("%d x %2d = %3d\n", number, count, number*count);
+        count--;
+    }
+}
+
+void forLoop(int number) {
+    printf("Multiplication table of %d using foor loop.\n", number);
+    for (int count = 1; count <= 10; count++) {
+        printf("%d x %2d = %3d\n", number, count, number*count);
+    }
 }
