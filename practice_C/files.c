@@ -8,10 +8,21 @@ void writeOnFile(char fileName[]) {
 
     if(file == NULL) {
         printf("File %s cannot be opened.", fileName);
+        return;
     }
 
-    fputs("C is a fun programming language.\n", file);
-    fputs("And, love using C language.\n", file);
+    char* content;
+    content = (char*) malloc(1000 * sizeof(char));
+
+    printf("Enter the content you want to write in the file.!\n");
+    printf("To end the program, Press Enter <-'\n");
+
+    while (1) {
+        fgets(content, 1000, stdin);
+        if (!(strcmp(content, "\n"))) break;
+
+        fputs(content, file);
+    }
 
     fclose(file);
 }
@@ -19,6 +30,11 @@ void writeOnFile(char fileName[]) {
 char* readFromFile(char fileName[]) {
     FILE* file;
     file = fopen(fileName, "r");
+
+    if(file == NULL) {
+        printf("File %s cannot be opened.", fileName);
+        return "";
+    }
 
     char content[1000];
     char* result;
@@ -28,6 +44,7 @@ char* readFromFile(char fileName[]) {
         strcat(result, content);
     }
     
+    // fclose(file);
     return result;
 }
 
